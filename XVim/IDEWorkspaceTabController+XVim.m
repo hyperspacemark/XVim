@@ -394,19 +394,6 @@ static inline BOOL xvim_horizontallyStackingModeForMode(GeniusLayoutMode mode) {
     }
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-- (id)xvim_keyboardFocusAreas {
-    if ([self respondsToSelector:@selector(_keyboardFocusAreas)]) {
-        return [self performSelector:@selector(_keyboardFocusAreas)];
-    } else if ([self respondsToSelector:@selector(_keyboardFocusAreas:)]) {
-        return [self performSelector:@selector(_keyboardFocusAreas:) withObject:@YES];
-    } else {
-        return nil;
-    }
-}
-#pragma clang diagnostic pop
-
 @end
 
 IDEEditorOpenSpecifier* xvim_openSpecifierForContext(IDEEditorContext* context)
