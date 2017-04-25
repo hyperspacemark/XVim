@@ -207,12 +207,12 @@
             return [self xvim__drawInsertionPointInRect:aRect color:aColor];
         }
 
-        if ([self isIDEPlaygroundSourceTextView]) {
+        if ([self isIDEPlaygroundSourceTextView]){
             // Copypasta from pebble8888/XVim, Huge thanks to pebble8888!!
             // Here's the link to the commit:
             // https://github.com/pebble8888/XVim/commit/e27a614f6b59534b934ddeecba4c7355f34d4057
             // Playground code
-            NSGraphicsContext *context = [NSGraphicsContext currentContext];
+            NSGraphicsContext* context = [NSGraphicsContext currentContext];
             [context saveGraphicsState];
             NSUInteger glyphIndex = [self insertionPoint];
             NSRect glyphRect = [self xvim_boundingRectForGlyphIndex:glyphIndex];
